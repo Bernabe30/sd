@@ -7,11 +7,21 @@ import (
     "fmt"
     "time"
     "strconv"
+    "github.com/streadway/amqp"
+    "encoding/json"
 
 	"golang.org/x/net/context"
 )
 
 type Server struct {
+}
+
+type PaqFinanzas struct {
+    Id int
+    Tipo string
+    Valor int
+    Intentos int
+    Fecha_entrega string
 }
 
 var seguimiento = 130031
@@ -22,13 +32,6 @@ var normal [][]string
 var registro [][]string
 
 func (s *Server) OrderRetail(ctx context.Context, in *Retail) (*Confirmation, error) {
-	//log.Printf("Id: %s", in.Id)
-    //log.Printf("Producto: %s", in.Producto)
-    //log.Printf("Valor: %s", in.Valor)
-    //log.Printf("Tienda: %s", in.Tienda)
-    //log.Printf("Destino: %s", in.Destino)
-    //log.Printf("")
-    
     var data [][]string
     t := time.Now()
     data = append(data, []string{t.Format("2006-01-02 15:04:05"),fmt.Sprintf("%d",      ide),"retail",in.Producto,in.Valor,in.Tienda,in.Destino,"0"})    
@@ -40,15 +43,7 @@ func (s *Server) OrderRetail(ctx context.Context, in *Retail) (*Confirmation, er
 	return &Confirmation{Body: "Orden confirmada"}, nil
 }
  
-func (s *Server) OrderPyme(ctx context.Context, in *Pyme) (*Confirmation, error) {
-	//log.Printf("Id: %s", in.Id)
-    //log.Printf("Producto: %s", in.Producto)
-    //log.Printf("Valor: %s", in.Valor)
-    //log.Printf("Tienda: %s", in.Tienda)
-    //log.Printf("Destino: %s", in.Destino)
-    //log.Printf("Prioritario: %s", in.Prioritario)
-    //log.Printf("")
-    
+func (s *Server) OrderPyme(ctx context.Context, in *Pyme) (*Confirmation, error) {    
     prio, err := strconv.Atoi(in.Prioritario)
     if err != nil {           
         log.Fatal(err)                                                                                                                                                        
@@ -140,15 +135,92 @@ func (s *Server) Camion(ctx context.Context, in *Tipo) (*Paquete, error) {
 }
 
 func (s *Server) EnvioTerminado(ctx context.Context, in *Paquete) (*Confirmation, error) {
-    
-    for i := 0; i < len(registro); i++ {
+    var i int
+    for i = 0; i < len(registro); i++ {
         if registro[i][0] == in.Idpaquete {
             registro[i][4] = in.Estado
             registro[i][5] = in.Intentos
-            fmt.Println(registro[i])
+            //fmt.Println(registro[i])
             break
         }
     }
+    
+	conn, err := amqp.Dial("amqp://guest:guest@localhost:5672/")
+	if err != nil {
+		fmt.Println("Failed Initializing Broker Connection")
+		panic(err)
+	}
+
+	ch, err := conn.Channel()
+	if err != nil {
+		fmt.Println(err)
+	}
+	defer ch.Close()
+
+	q, err := ch.QueueDeclare(
+		"Finanzas",
+		false,
+		false,
+		false,
+		false,
+		nil,
+	)
+
+	fmt.Println(q)
+	if err != nil {
+		fmt.Println(err)
+	}
+    
+    var paquete_num = "0"
+    
+	if registro[i][4] == "Recibido" {
+        paquete_num = "1"
+    }
+    
+    
+    paquete_id, err := strconv.Atoi(registro[i][0])
+    if err != nil {           
+        log.Fatal(err)                                                                                                                                                        
+    }    
+    
+    paquete_valor, err := strconv.Atoi(registro[i][3])
+    if err != nil {           
+        log.Fatal(err)                                                                                                                                                        
+    }
+    
+    paquete_intentos, err := strconv.Atoi(registro[i][5])
+    if err != nil {           
+        log.Fatal(err)                                                                                                                                                        
+    }    
+       
+        
+    rabbit := &PaqFinanzas {
+        Id: paquete_id,
+        Tipo: registro[i][2],
+        Valor: paquete_valor,
+        Intentos: paquete_intentos,
+        Fecha_entrega: paquete_num,
+    }
+	
+	JSON, err := json.Marshal(rabbit)
+    if err != nil {
+        fmt.Println(err)
+    }
+    
+	err = ch.Publish(
+		"",
+		"Finanzas",
+		false,
+		false,
+		amqp.Publishing{
+			ContentType: "text/plain",
+			Body:        []byte(JSON),
+		},
+	)
+
+	if err != nil {
+		fmt.Println(err)
+	}
     
 	return &Confirmation{Body: "Envio actualizado"}, nil
 }

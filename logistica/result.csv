@@ -1,54 +1,21 @@
 timestamp,id-paquete,tipo,nombre,valor,origen,destino,seguimiento
-2020-10-19 01:46:54,1,retail,Polera,10,tienda-A,casa-A,0
-2020-10-19 01:46:56,2,retail,Pantalón,12,tienda-B,casa-B,0
-2020-10-19 01:46:58,3,retail,Televisor,110,tienda-C,casa-C,0
-2020-10-19 01:46:58,4,prioritario,Secador de pelo,15,pyme,casa-K,130031
-2020-10-19 01:47:00,5,retail,Consola de Videojuegos,95,tienda-A,casa-D,0
-2020-10-19 01:47:00,6,prioritario,Jabón para la ducha,8,pyme,casa-A,130032
-2020-10-19 01:47:02,7,retail,Lavadora,100,tienda-B,casa-Q,0
-2020-10-19 01:47:02,8,normal,Acondicionador,10,pyme,casa-A,130033
-2020-10-19 01:47:04,9,retail,Polerón,15,tienda-C,casa-A,0
-2020-10-19 01:47:04,10,normal,Shampoo,10,pyme,casa-D,130034
-2020-10-19 01:47:06,11,retail,Parca,20,tienda-B,casa-C,0
-2020-10-19 01:47:06,12,prioritario,Crema para peinar,8,pyme,casa-E,130035
-2020-10-19 01:47:08,13,retail,Pelota,5,tienda-C,casa-P,0
-2020-10-19 01:47:08,14,prioritario,Placa madre,50,pyme,casa-B,130036
-2020-10-19 01:47:10,15,retail,Raqueta,20,tienda-A,casa-F,0
-2020-10-19 01:47:10,16,normal,Procesador R,75,pyme,casa-N,130037
-2020-10-19 01:47:12,17,retail,Refrigerador,120,tienda-B,casa-U,0
-2020-10-19 01:47:12,18,prioritario,Ventilador,10,pyme,casa-N,130038
-2020-10-19 01:47:14,19,retail,Tostador,25,tienda-C,casa-A,0
-2020-10-19 01:47:14,20,normal,Gabinete,20,pyme,casa-S,130039
-2020-10-19 01:47:16,21,retail,Perfume,15,tienda-A,casa-N,0
-2020-10-19 01:47:16,22,prioritario,Fuente de poder,25,pyme,casa-P,130040
-2020-10-19 01:47:18,23,retail,Tobillera,6,tienda-C,casa-N,0
-2020-10-19 01:47:18,24,normal,Memoria RAM,22,pyme,casa-R,130041
-2020-10-19 01:47:20,25,retail,Notebook,80,tienda-B,casa-A,0
-2020-10-19 01:47:20,26,normal,Procesador I,90,pyme,casa-N,130042
-2020-10-19 01:47:22,27,retail,Set de ollas,50,tienda-C,casa-C,0
-2020-10-19 01:47:22,28,prioritario,Tarjeta de video,115,pyme,casa-I,130043
-2020-10-19 01:47:24,29,retail,Parlante,25,tienda-C,casa-E,0
-2020-10-19 01:47:24,30,prioritario,Set de plumones,9,pyme,casa-C,130044
-2020-10-19 01:47:26,31,retail,Lampara,30,tienda-A,casa-A,0
-2020-10-19 01:47:26,32,normal,Cuadernos,5,pyme,casa-C,130045
-2020-10-19 01:47:28,33,retail,Sillón,105,tienda-C,casa-C,0
-2020-10-19 01:47:28,34,normal,Lapices,4,pyme,casa-I,130046
-2020-10-19 01:47:30,35,retail,Mesa,90,tienda-A,casa-S,0
-2020-10-19 01:47:30,36,normal,Zapatillas de futbol,16,pyme,casa-E,130047
-2020-10-19 01:47:32,37,retail,Cama,115,tienda-B,casa-A,0
-2020-10-19 01:47:32,38,prioritario,Pelota de futbol,11,pyme,casa-V,130048
-2020-10-19 01:47:34,39,prioritario,Raqueta de tenis,15,pyme,casa-Z,130049
-2020-10-19 01:47:36,40,prioritario,Palo de golf,18,pyme,casa-Y,130050
-2020-10-19 01:47:38,41,normal,Polera,9,pyme,casa-F,130051
-2020-10-19 01:47:40,42,prioritario,Pantalón,11,pyme,casa-C,130052
-2020-10-19 01:47:42,43,normal,Abrigo,17,pyme,casa-U,130053
-2020-10-19 01:47:44,44,prioritario,Bufanda,6,pyme,casa-A,130054
-2020-10-19 01:47:46,45,normal,Chaqueta,16,pyme,casa-X,130055
-2020-10-19 01:47:48,46,prioritario,Sueter,14,pyme,casa-C,130056
-2020-10-19 01:47:50,47,normal,Pantalón,10,pyme,casa-A,130057
-2020-10-19 01:47:52,48,normal,Polera,7,pyme,casa-Q,130058
-2020-10-19 01:47:54,49,normal,Pistachos: 200 g,4,pyme,casa-B,130059
-2020-10-19 01:47:56,50,normal,Mani: 1 Kg,5,pyme,casa-A,130060
-2020-10-19 01:47:58,51,normal,Almendras: 500 g,5,pyme,casa-L,130061
-2020-10-19 01:48:00,52,normal,Chia: 500 g,6,pyme,casa-D,130062
-2020-10-19 01:48:02,53,prioritario,Arroz: 1 Kg,3,pyme,casa-C,130063
+2020-10-19 20:10:04,1,retail,Polera,10,tienda-A,casa-A,0
+2020-10-19 20:10:05,2,retail,Pantalón,12,tienda-B,casa-B,0
+2020-10-19 20:10:06,3,retail,Televisor,110,tienda-C,casa-C,0
+2020-10-19 20:10:07,4,retail,Consola de Videojuegos,95,tienda-A,casa-D,0
+2020-10-19 20:10:08,5,retail,Lavadora,100,tienda-B,casa-Q,0
+2020-10-19 20:10:09,6,retail,Polerón,15,tienda-C,casa-A,0
+2020-10-19 20:10:10,7,retail,Parca,20,tienda-B,casa-C,0
+2020-10-19 20:10:11,8,retail,Pelota,5,tienda-C,casa-P,0
+2020-10-19 20:10:12,9,retail,Raqueta,20,tienda-A,casa-F,0
+2020-10-19 20:10:13,10,retail,Refrigerador,120,tienda-B,casa-U,0
+2020-10-19 20:10:14,11,retail,Tostador,25,tienda-C,casa-A,0
+2020-10-19 20:10:15,12,retail,Perfume,15,tienda-A,casa-N,0
+2020-10-19 20:10:16,13,retail,Tobillera,6,tienda-C,casa-N,0
+2020-10-19 20:10:17,14,retail,Notebook,80,tienda-B,casa-A,0
+2020-10-19 20:10:18,15,retail,Set de ollas,50,tienda-C,casa-C,0
+2020-10-19 20:10:20,16,retail,Parlante,25,tienda-C,casa-E,0
+2020-10-19 20:10:21,17,retail,Lampara,30,tienda-A,casa-A,0
+2020-10-19 20:10:22,18,retail,Sillón,105,tienda-C,casa-C,0
+2020-10-19 20:10:23,19,retail,Mesa,90,tienda-A,casa-S,0
+2020-10-19 20:10:24,20,retail,Cama,115,tienda-B,casa-A,0

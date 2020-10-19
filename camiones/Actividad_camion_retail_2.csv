@@ -1,11 +1,11 @@
 id-paquete,tipo,valor,origen,destino,intentos,fecha_entrega
-5,retail,95,tienda-A,casa-D,1,19-10-2020 01:47
-1,retail,10,tienda-A,casa-A,3,19-10-2020 01:47
-11,retail,20,tienda-B,casa-C,1,19-10-2020 01:47
-13,retail,5,tienda-C,casa-P,1,19-10-2020 01:47
-19,retail,25,tienda-C,casa-A,1,19-10-2020 01:47
-21,retail,15,tienda-A,casa-N,1,19-10-2020 01:47
-27,retail,50,tienda-C,casa-C,1,19-10-2020 01:47
-29,retail,25,tienda-C,casa-E,1,19-10-2020 01:47
-35,retail,90,tienda-A,casa-S,1,19-10-2020 01:47
-31,retail,30,tienda-A,casa-A,2,19-10-2020 01:47
+4,retail,95,tienda-A,casa-D,1,19-10-2020 20:10
+1,retail,10,tienda-A,casa-A,2,19-10-2020 20:10
+6,retail,15,tienda-C,casa-A,1,19-10-2020 20:10
+8,retail,5,tienda-C,casa-P,1,19-10-2020 20:10
+10,retail,120,tienda-B,casa-U,2,19-10-2020 20:10
+12,retail,15,tienda-A,casa-N,1,19-10-2020 20:10
+15,retail,50,tienda-C,casa-C,1,19-10-2020 20:10
+16,retail,25,tienda-C,casa-E,1,19-10-2020 20:10
+20,retail,115,tienda-B,casa-A,1,19-10-2020 20:10
+19,retail,90,tienda-A,casa-S,1,19-10-2020 20:10
